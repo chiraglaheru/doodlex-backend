@@ -142,4 +142,11 @@ public class UserController {
         return response;
     }
 
+    @GetMapping("/{id}/is-following")
+    public boolean isFollowing(
+            @PathVariable Long id,
+            @RequestParam Long followerId
+    ){
+        return followRepository.existsByFollowerIdAndFollowingId(followerId,id);
+    }
 }
