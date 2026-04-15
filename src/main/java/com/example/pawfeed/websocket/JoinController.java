@@ -14,7 +14,7 @@ public class JoinController {
         GameState.addPlayer(userId);
         GameState.updateActivity(userId);
         GameState.debug();
-        return GameState.players;
+        return new ArrayList<>(GameState.players);
     }
 
     @MessageMapping("/syncTurn")
