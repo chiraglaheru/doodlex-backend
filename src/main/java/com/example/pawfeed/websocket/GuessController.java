@@ -15,6 +15,8 @@ public class GuessController {
         String user = parts[0];
         String guess = parts[1];
 
+        GameState.updateActivity(user);
+
         if (user.equals(GameState.getCurrentDrawer())){
             return "IGNORE";
         }
