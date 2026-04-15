@@ -21,8 +21,6 @@ public class JoinController {
         GameState.updateActivity(userId);
         GameState.debug();
 
-        // Tell only the joining player who the current drawer is
-        // so it doesn't broadcast a drawer-reset to everyone
         String currentDrawer = GameState.getCurrentDrawer();
         if (currentDrawer != null) {
             messagingTemplate.convertAndSend(
@@ -37,5 +35,10 @@ public class JoinController {
     @SendTo("/topic/turn")
     public String syncTurn() {
         return GameState.getCurrentDrawer();
+    }
+
+    @MessageMapping("/updateActivity")
+    public void updateActivity(String userId) {
+        GameState.updateActivity(userId);
     }
 }
