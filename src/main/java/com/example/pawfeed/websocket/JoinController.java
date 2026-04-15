@@ -12,6 +12,7 @@ public class JoinController {
     @SendTo("/topic/players")
     public List<String> join(String userId) {
         GameState.addPlayer(userId);
+        GameState.updateActivity(userId);
         GameState.debug();
         return GameState.players;
     }
