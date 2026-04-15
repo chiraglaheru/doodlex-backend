@@ -15,12 +15,12 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
 
-        config.setAllowCredentials(false);
+        config.setAllowCredentials(true);
         config.setAllowedOriginPatterns(List.of(
-                "https://doodle-x-7uxz.vercel.app/",
+                "https://doodle-x-7uxz.vercel.app",
                 "http://localhost:3000"
         ));
-        config.setAllowedHeaders(List.of("Origin, Content-Type, Accept"));
+        config.setAllowedHeaders(List.of("*"));
         config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
