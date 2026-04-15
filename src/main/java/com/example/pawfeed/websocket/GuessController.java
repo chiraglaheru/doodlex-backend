@@ -9,7 +9,7 @@ public class GuessController {
     @MessageMapping("/guess")
     @SendTo("/topic/guess")
     public String checkGuess(String msg) {
-
+        GameState.updateActivity(userId);
         // format: userId:guess
         String[] parts = msg.split(":");
         String user = parts[0];
