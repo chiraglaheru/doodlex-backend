@@ -10,14 +10,17 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.enableSimpleBroker("/topic"); // where frontend listens
-        config.setApplicationDestinationPrefixes("/app"); // where frontend sends
+        config.enableSimpleBroker("/topic");
+        config.setApplicationDestinationPrefixes("/app");
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/chat")
-                .setAllowedOriginPatterns("*")
+                .setAllowedOrigins(
+                    "http://localhost:3000",
+                    "https://doodle-x-7uxz.vercel.app"
+                )
                 .withSockJS();
     }
 }
