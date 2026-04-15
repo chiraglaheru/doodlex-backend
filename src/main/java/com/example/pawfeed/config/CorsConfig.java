@@ -20,7 +20,7 @@ public class CorsConfig {
                 "https://doodle-x-7uxz.vercel.app/",
                 "http://localhost:3000"
         ));
-        config.setAllowedHeaders(List.of("Origin, Content-Type, Accept""));
+        config.setAllowedHeaders(List.of("Origin, Content-Type, Accept"));
         config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
