@@ -17,10 +17,10 @@ public class CorsConfig {
 
         config.setAllowCredentials(false);
         config.setAllowedOriginPatterns(List.of(
-                "https://*.vercel.app",
+                "https://doodle-x-7uxz.vercel.app/",
                 "http://localhost:3000"
         ));
-        config.setAllowedHeaders(List.of("*"));
+        config.setAllowedHeaders(List.of("Origin, Content-Type, Accept""));
         config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
