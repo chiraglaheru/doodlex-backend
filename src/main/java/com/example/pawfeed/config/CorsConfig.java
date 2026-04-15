@@ -6,14 +6,16 @@ import org.springframework.web.servlet.config.annotation.*;
 
 @Configuration
 public class CorsConfig {
-
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:3000","https://doodle-x-7uxz.vercel.app/")
+                        .allowedOrigins(
+                            "http://localhost:3000",
+                            "https://doodle-x-7uxz.vercel.app"  
+                        )
                         .allowedMethods("*")
                         .allowedHeaders("*")
                         .allowCredentials(true);
