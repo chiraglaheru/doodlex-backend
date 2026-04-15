@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 
 @Component
-public class CleanupScheduler {
+public class PlayerCleanup {
 
     @Autowired
     private SimpMessagingTemplate messagingTemplate;
