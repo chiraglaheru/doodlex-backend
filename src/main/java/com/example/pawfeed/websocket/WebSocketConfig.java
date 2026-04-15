@@ -20,4 +20,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         .setAllowedOriginPatterns("*")
         .withSockJS();
     }
+    @PostConstruct
+    public void init() {
+    System.out.println("✅ WebSocketConfig Loaded");
+}
 }
